@@ -42,11 +42,12 @@ let autoSendResponse = true; // Set to false in methods which should not send a 
             const endpoint = param.endpoint;
             const documentUrl = param.path;
             const modelId = param.modelId;
+            const mimeType = param.mimeType;
     
         const client = new DocumentAnalysisClient(endpoint, new AzureKeyCredential(apikey));
         const fileStream = fs.createReadStream(documentUrl);
         
-        const poller = await client.beginAnalyzeDocument(modelId, fileStream, "application/pdf");
+        const poller = await client.beginAnalyzeDocument(modelId, fileStream, mimeType);
         // Wait for the process to complete
         const result = await poller.pollUntilDone();
        
