@@ -31,8 +31,7 @@ let autoSendResponse = true; // Set to false in methods which should not send a 
         }
     };
 
-
-    // Omnis method to function mapping
+     // Omnis method to function mapping
     const methodMap = {
 
         // Upload a document to and endpoint and retrieve recognized form fields from given pretrained model
@@ -41,46 +40,70 @@ let autoSendResponse = true; // Set to false in methods which should not send a 
             autoSendResponse = false;   
             const apikey = param.key;
             const endpoint = param.endpoint;
-            const documentPath = param.path;
+            const documentUrl = param.path;
             const modelId = param.modelId;
     
         const client = new DocumentAnalysisClient(endpoint, new AzureKeyCredential(apikey));
-        const fileStream = fs.createReadStream(documentPath);
-    
+        const fileStream = fs.createReadStream(documentUrl);
+        
         const poller = await client.beginAnalyzeDocument(modelId, fileStream, "application/pdf");
         // Wait for the process to complete
         const result = await poller.pollUntilDone();
        
-        // send the response to Omnis
-         omnis_calls.sendResponse(result, response);
+           // send the response to Omnis
+           // omnis_calls.sendResponse(jsonresult, response);
+           omnis_calls.sendResponse(result, response);
             
            return 1;
           
         },
-
-        // classify your document upload
+        // Upload a document to and endpoint and retrieve recognized document type from given pretrained model
         classify: async function(param, response) {
 
             autoSendResponse = false;   
             const apikey = param.key;
             const endpoint = param.endpoint;
-            const documentPath = param.path;
+            const documentUrl = param.path;
             const modelId = param.modelId;
     
         const client = new DocumentAnalysisClient(endpoint, new AzureKeyCredential(apikey));
-        const fileStream = fs.createReadStream(documentPath);
+        const fileStream = fs.createReadStream(documentUrl);
     
         const poller = await client.beginClassifyDocument(modelId, fileStream);
         
         // Wait for the process to complete
         const result = await poller.pollUntilDone();
        
-        // send the response to Omnis
-        omnis_calls.sendResponse(result, response);
+           // send the response to Omnis
+           // omnis_calls.sendResponse(jsonresult, response);
+           omnis_calls.sendResponse(result, response);
             
            return 1;
           
-        }
+        },
+              // Upload a document to and endpoint and retrieve the full page layout from a prebuilt model. Could easily be called in evaluateField by modelID.
+              layout: async function(param, response) {
+
+                autoSendResponse = false;   
+                const apikey = param.key;
+                const endpoint = param.endpoint;
+                const documentUrl = param.path;
+                const modelId = "prebuilt-layout";
+        
+            const client = new DocumentAnalysisClient(endpoint, new AzureKeyCredential(apikey));
+            const fileStream = fs.createReadStream(documentUrl);
+            
+            const poller = await client.beginAnalyzeDocument(modelId, fileStream, "application/pdf");
+            // Wait for the process to complete
+            const result = await poller.pollUntilDone();
+           
+               // send the response to Omnis
+               // omnis_calls.sendResponse(jsonresult, response);
+               omnis_calls.sendResponse(result, response);
+                
+               return 1;
+              
+            }
 
     };
 
