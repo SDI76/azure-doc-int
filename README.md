@@ -4,11 +4,11 @@ Azure JS SDK wrapper für Omnis JSWorker.
 
 Check your node environment and update to the latest version and set the environment version accordingly:
 
- - List packages: nvm ls
- - Install latest: nvm install node --latest-npm
- - List current: nvm current
- - Change current: nvm alias default 23.1.0 or nvm alias default node (latest)
- - Use specific: nvm use 23.1.0 or nvm use node (latest)
+- List packages: nvm ls
+- Install latest: nvm install node --latest-npm
+- List current: nvm current
+- Change current: nvm alias default 23.1.0 or nvm alias default node (latest)
+- Use specific: nvm use 23.1.0 or nvm use node (latest)
 
 
 After cloning the project, run "npm install" to install the dependencies.
@@ -22,4 +22,3 @@ If you changed the name of the folder, you will have to update the name in the o
 
 Before Omnis 11, any module had to be manually added to the omnis_modules.js.
 Unsupported hint: Copy or deploy the new omnis_modules.js and the other .js files out of an Omnis 11 installation to the jsworker folder of previous Omnis versions to benefit from automated module and method registration.
-
