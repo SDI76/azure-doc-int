@@ -3,11 +3,13 @@
 Azure JS SDK wrapper für Omnis JSWorker.
 
 Check your node environment and update to the latest version and set the environment version accordingly:
+
   List packages: nvm ls
   Install latest: nvm install node --latest-npm
   List current: nvm current
   Change current: nvm alias default 23.1.0 or nvm alias default node (latest)
   Use specific: nvm use 23.1.0 or nvm use node (latest)
+
 
 After cloning the project, run "npm install" to install the dependencies.
 Make sure you do not rename the project folder, it's name has to be: azure-doc-ai 
