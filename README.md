@@ -1,6 +1,6 @@
 # AzureDocumentIntelligence
 
-Azure JS SDK wrapper for the Omnis Studio JSWorker.
+Azure JS module for the Omnis Studio JSWorker.
 
 Check your node environment and update to the latest version and set the environment version accordingly:
 
