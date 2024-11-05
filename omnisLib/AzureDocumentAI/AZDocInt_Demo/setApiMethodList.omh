@@ -1,0 +1,6 @@
+Do iAPIFunctionList.$define(function)
+Do iAPIFunctionList.$add('evaluateFields')
+Do iAPIFunctionList.$add('classify')
+Do iAPIFunctionList.$add('layout')
+Do iAPIFunctionList.$first()
+Calculate iApiMethod as iAPIFunctionList.function

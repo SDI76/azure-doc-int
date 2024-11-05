@@ -1,0 +1,17 @@
+Do iFormFieldList.$define(key,value,confidence)
+
+Calculate list as iJSMethodReturnRow.documents
+
+
+If not(list.$linecount)
+	Calculate iErrMessage as 'Error in method getDocType. The API did not return any values'
+	Quit method -1
+End If
+
+
+For list.$line from 1 to list.$linecount step 1
+	Calculate row as list.C1
+	Do iFormFieldList.$add(row.$cols.docType.$name,row.docType,row.confidence)
+End For
+
+Quit method 0

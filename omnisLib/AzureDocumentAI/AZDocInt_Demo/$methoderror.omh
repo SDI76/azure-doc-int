@@ -1,0 +1,5 @@
+Calculate iMethodError as pMethodError
+Calculate iErrorcode as pMethodError.errorCode
+Calculate iErrorInfo as pMethodError.errorInfo
+Calculate iErrorModuleName as pMethodError.__module
+Calculate iErrorMethodName as pMethodError.__method

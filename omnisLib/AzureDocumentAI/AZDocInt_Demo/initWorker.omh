@@ -1,0 +1,4 @@
+Do iJSW.$init(,kTrue)
+Do iJSW.$callbackinst.$assign($cinst)
+Do iJSW.$start() Returns iWorkerStarted
+Quit method iWorkerStarted

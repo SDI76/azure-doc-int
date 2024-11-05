@@ -1,0 +1,50 @@
+Do iFormFieldList.$define(key,value,confidence)
+Do formTable.$define(key,rows,confidence)
+Do iFormTable.$define(tablename,colname,value,confidence)
+## For the fun of it, let's see how to process the Rows returned from the JSON, as JSON
+
+## Convert back to JSON with the Omnis function
+Do OJSON.$listorrowtojson(iJSMethodReturnRow.documents,kUniTypeCharacter,fehlerText) Returns jsonPayload
+
+## Using the external JSON object..
+Do jsonObj.$setjson('',jsonPayload) Returns success
+If success<>1
+	Calculate iErrMessage as 'Error in method getFormFields. Could not read the returned JSON payload. FormFieldList creation failed.'
+	Quit method -1
+End If
+
+## ..pick out the fields Object
+Do jsonObj.$getobject('[0].fields') Returns fields
+
+## process the rows
+For colnum from 1 to fields.$colcount step 1
+	If fields.C[colnum].kind='array'
+		Do formTable.$add(fields.$cols.[colnum].$name,fields.C[colnum].values,fields.C[colnum].confidence)
+	Else
+		Do iFormFieldList.$add(fields.$cols.[colnum].$name,fields.C[colnum].value,fields.C[colnum].confidence)
+	End If
+End For
+
+
+## create a TAB separeted string from the table contents and fill a List with the values
+For formTable.$line from 1 to formTable.$linecount step 1
+	
+	Calculate rows as formTable.rows
+	
+	For rowCounter from rows.$cols to rows.$colcount step 1 ## Table rows
+		
+		Calculate rowObject as rows.C[rowCounter].properties ## the information we seek is in the propertis row
+		
+		For rowObjectCounter from rowObject.$cols to rowObject.$colcount step 1
+			Do iFormTable.$add(formTable.key,rowObject.C[rowObjectCounter].$name,rowObject.C[rowObjectCounter].value,rowObject.C[rowObjectCounter].confidence)
+			Calculate tablecol as con(tablecol,separator,trim(rowObject.C[rowObjectCounter].value,1,1,separator))
+		End For
+		Calculate tablerows as trim(con(tablerows,kCr,trim(tablecol,1,1,separator)),1,1,kCr)
+		Calculate tablecol as ''
+	End For
+	
+End For
+
+Calculate iTSV as tablerows
+
+Quit method 0

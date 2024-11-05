@@ -1,0 +1,5 @@
+Calculate iErrorcode as 0
+Calculate iErrorInfo as ''
+Calculate iErrorModuleName as ''
+Calculate iErrorMethodName as ''
+Do iMethodReturnRow.$clear()

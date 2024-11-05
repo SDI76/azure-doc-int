@@ -1,0 +1,258 @@
+{
+	"classtype": "kWindow",
+	"omnisversion": "11.1",
+	"omnisbuild": 111037255,
+	"internalversion": 1639,
+	"designtaskname": "Startup_Task",
+	"nextident": 1079,
+	"lastgroupident": 61,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "iAPIFunctionList",
+			"order": 17,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "the available JS functions list"
+		},
+		{
+			"name": "iAPIKey",
+			"order": 11,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 1000,
+			"initval": "'FuMselER20OzEvsMHJBsKSfmVZkXiU3GnEcrcOoX5tfykqOTyOlGJQQJ99AJAC5RqLJXJ3w3AAALACOGYf11'"
+		},
+		{
+			"name": "iApiMethod",
+			"order": 14,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100,
+			"initval": "'evaluateFields'",
+			"desc": "Mapped JS functions"
+		},
+		{
+			"name": "iEndpoint",
+			"order": 10,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 1000,
+			"initval": "'https://documentinteleuromnis.cognitiveservices.azure.com/'"
+		},
+		{
+			"name": "iErrMessage",
+			"order": 16,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 1000
+		},
+		{
+			"name": "iErrorcode",
+			"order": 4,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iErrorInfo",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iErrorMethodName",
+			"order": 7,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iErrorModuleName",
+			"order": 6,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iFilepath",
+			"order": 13,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 1000
+		},
+		{
+			"name": "iFormFieldList",
+			"order": 15,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iFormTable",
+			"order": 21,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iJSMethodReturnRow",
+			"order": 3,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iJSW",
+			"order": 1,
+			"type": "kObject",
+			"subtype": "OJSWorker",
+			"sublen": 0,
+			"desc": "JS Worker object"
+		},
+		{
+			"name": "iMethodError",
+			"order": 9,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iMimeTypeList",
+			"order": 18,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iModelID",
+			"order": 12,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 1000,
+			"initval": "'model_01'"
+		},
+		{
+			"name": "iPagesLayoutJSON",
+			"order": 20,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iTSV",
+			"order": 19,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iWorkerError",
+			"order": 8,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iWorkerStarted",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeNone",
+		"backpattern": 0,
+		"bringinfront": false,
+		"canremotedebugwhenlocked": false,
+		"clickbehind": true,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componentinfo": {
+
+		},
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2024-09-06 13:51:28",
+		"desc": "Azure Document Intel. form recognition and field extraction demo",
+		"designguides": "",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": true,
+		"external": true,
+		"forecolor": "RGB(242,247,240)",
+		"growbox": true,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 723,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"horzscroll": false,
+		"inheritedorder": 0,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 238,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minheight": 0,
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"minwidth": 0,
+		"moddate": "2024-11-04 23:43:20",
+		"modelessdata": true,
+		"movebehind": true,
+		"osdropflags": "kOSDROPnone",
+		"showascheckedout": false,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kTitle",
+		"title": {
+			"type": 0,
+			"calc": "Azure Document Intelligence: Field extraction"
+		},
+		"toolbarnames": "",
+		"toolbaroptions": "kTBOptionNone",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 47,
+		"userinfo": "",
+		"usesheets": false,
+		"vcsrevision": 0,
+		"version": "1.0",
+		"vertgrid": 8,
+		"vertscroll": false,
+		"width": 709,
+		"zoombox": false
+	},
+	"statusbar": {
+		"inherited": false,
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

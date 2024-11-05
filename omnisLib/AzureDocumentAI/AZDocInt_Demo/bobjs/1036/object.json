@@ -1,0 +1,33 @@
+{
+	"ident": 1036,
+	"order": 16392,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kRightJst",
+		"backcolor": "RGBA(kColorBackFill,255)",
+		"backpattern": 15,
+		"bordercolor": "RGBA(0,0,0,255)",
+		"componentinfo": {
+
+		},
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"effect": "kBorderNone",
+		"fieldstyle": "CtrlLabel",
+		"font": 6,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "RGBA(kColorForeFill,255)",
+		"height": 22,
+		"left": 6,
+		"linestyle": 1,
+		"objlink": 262159,
+		"text": "Error Code",
+		"textcolor": "kColorWindowText",
+		"top": 212,
+		"userinfo": "",
+		"vertcentertext": true,
+		"visible": true,
+		"width": 92
+	}
+}

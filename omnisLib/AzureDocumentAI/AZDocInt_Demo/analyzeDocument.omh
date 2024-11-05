@@ -1,0 +1,40 @@
+
+If isclear(iAPIKey)|isclear(iEndpoint)|isclear(iFilepath)|isclear(iModelID)
+	Calculate iErrMessage as 'Missing params... Check your entries.'
+	Quit method -1
+End If
+
+#Do method initWorker
+
+Do lRow.$cols.$add('key',kCharacter,kSimplechar)
+Do lRow.$cols.$add('endpoint',kCharacter,kSimplechar)
+Do lRow.$cols.$add('path',kCharacter,kSimplechar)
+Do lRow.$cols.$add('modelId',kCharacter,kSimplechar)
+Do lRow.$cols.$add('mimeType',kCharacter,kSimplechar)
+Do lRow.key.$assign(iAPIKey)
+Do lRow.endpoint.$assign(iEndpoint)
+Do lRow.path.$assign(iFilepath)
+Do lRow.modelid.$assign(iModelID)
+Do lRow.mimeType.$assign(iMimeTypeList.type)
+
+Breakpoint
+Do iJSW.$callmethod('azure-doc-int',iApiMethod,lRow,kTrue,errMessage) Returns ok
+
+If not(ok)
+	Calculate iErrMessage as con('Error in method ',iApiMethod,'.','Errtext: ',errMessage)
+	Quit method -1
+End If
+
+Switch iAPIFunctionList.function
+	Case 'classify'
+		Do method getDocType
+		
+	Case 'evaluateFields'
+		Do method getFormFields
+		
+	Case 'layout'
+		Do method getLayout
+		
+End Switch
+
+Quit method

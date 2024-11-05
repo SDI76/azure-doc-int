@@ -1,0 +1,7 @@
+Do iMimeTypeList.$define(type)
+Do iMimeTypeList.$add('application/pdf')
+Do iMimeTypeList.$add('image/jpeg')
+Do iMimeTypeList.$add('image/tiff')
+Do iMimeTypeList.$add('image/png')
+
+Do iMimeTypeList.$first()
